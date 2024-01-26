@@ -7,7 +7,7 @@ const session = require('express-session')
 
 
 //connect mongodb 
-mongoose.connect('mongodb+srv://all:mongomongo@sera.50wxxcf.mongodb.net/?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://votrenomuser:votremotdepasse@votredb.50wxxcf.mongodb.net/?retryWrites=true&w=majority')
   .then(() => console.log('Connexion à MongoDB réussie !')) //si le connexion a reussi
   .catch(() => console.log('Connexion à MongoDB échouée !'));//en cas d'erreur
 
