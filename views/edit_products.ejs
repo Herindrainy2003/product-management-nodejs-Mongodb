@@ -1,0 +1,33 @@
+<%- include('layouts/header') %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-6 mx-auto mt-4">
+      <div class="card shadow">
+        <div class="bg-primary">
+          <h3 class="text-light text-center"> Modifier le produits (<%= products.name %>)</h3>
+        </div>
+        <div class="card-body p-4">
+          <form action="/update/<%= products._id %>" id="add-form" method="post" enctype="multipart/form-data" autocomplete="off">
+            <div class="mb-3">
+              <label for="name"><i class="fa fa-user"></i> Nom Produit</label>
+              <input type="text" name="name" class="form-control" placeholder="Entrer le nom du produits" value="<%= products.name %>" required>
+            </div>
+            <div class="mb-3">
+              <label for="prices"><i class="fa fa-phone"></i> Prix</label>
+              <input type="text" name="prices" class="form-control" placeholder="Entrer le prouits" value="<%= products.prices %>" required>
+            </div>
+            <div class="mb-3">
+              <label for="image" class="form-label"><i class="fa fa-file-image-o"></i> Choisissez l'image</label>
+              <input type="file" name="image" class="form-control">
+              <img src="/<%= products.image %>" width="100" class="img-thumbnail m-1">
+            </div>
+            <input type="hidden" name="old_image" value="<%= products.image%>">
+            <div class="mb-3 d-grid">
+              <input type="submit" name="submit" value="Mettre a Jour" onclick="return confirm('Are you sure to update record ?');" class="btn btn-sm btn-primary">
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
